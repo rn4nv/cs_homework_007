@@ -1,2 +1,31 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Привет, Артем! Как делишки?");
+﻿Console.Clear();
+
+void FillArray (double[,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i,j] = new Random().Next(-100,100);
+        }
+    }
+}
+
+void PrintArray(double[,] matr)
+
+{
+
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            Console.Write($"{matr[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+double[,] matrix = new double[3, 4];
+FillArray(matrix);
+Console.WriteLine();
+PrintArray(matrix);
